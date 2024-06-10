@@ -1,7 +1,6 @@
 from fastapi import FastAPI, HTTPException
 import random
 import json
-import math
 import secrets
 import string
 import faker
@@ -9,7 +8,7 @@ import faker
 app = FastAPI()
 
 
-def generate_random_int(left: int = 0, right: int = math.inf) -> int:
+def generate_random_int(left: int = 0, right: int =10**100) -> int:
     """Generate a random integer within the given range."""
     return random.randint(left, right)
 
@@ -42,7 +41,7 @@ def get_root() -> dict:
     return {"float": random.random()}
 
 
-@app.get("random/int")
+@app.get("/random/int")
 def get_random_int() -> dict:
     """Return a random integer."""
     return {"int": generate_random_int()}
