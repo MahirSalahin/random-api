@@ -2,13 +2,15 @@ Random API
 ===========
 A FastAPI application that provides a variety of randomization endpoints for generating random data, simulating random events, and more.
 
-**Features**
+Features
+----------
 
 * Generate random floats, integers and characters
 * Simulate coin tosses and random choices
 * Generate random users and passwords
 
-**Endpoints**
+Endpoints
+-----------
 
 ### `/`
 
@@ -139,10 +141,12 @@ License
 
 This API is licensed under the MIT License.
 
-**Contributing**
+Contributing
+------------
 
 Contributions are welcome! If you'd like to add a new endpoint or feature, please submit a pull request.
 
-**Acknowledgments**
+Acknowledgments
+-----------------
 
 Thanks to the FastAPI and Python communities for making this project possible.
