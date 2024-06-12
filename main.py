@@ -8,7 +8,7 @@ import faker
 app = FastAPI()
 
 
-def generate_random_int(left: int = 0, right: int =10**100) -> int:
+def generate_random_int(left: int = 0, right: int = 10**100) -> int:
     """Generate a random integer within the given range."""
     return random.randint(left, right)
 
@@ -88,10 +88,22 @@ def get_color() -> dict:
 def generate_user() -> dict:
     """Generate a random user with name, email, and password."""
     fake = faker.Faker()
+    name = fake.name()
+    first_name, last_name = name.split()[0].lower(), name.split()[-1].lower()
+    nums = ''
+    for _ in range(random.randint(0, 4)):
+        nums += str(random.randint(0, 9))
+    email = random.choice(
+        [f"{first_name}.{last_name}@{fake.free_email_domain()}",
+         f"{first_name}.{last_name}{nums}@{fake.free_email_domain()}",
+         f"{nums}{first_name}@{fake.free_email_domain()}",
+         f"{first_name}{nums}@{fake.free_email_domain()}",
+         f"{last_name}{nums}@{fake.free_email_domain()}",
+         ])
     user = {
-        "name": fake.name(),
-        "email": fake.email(),
-        "password": fake.password(length=12)
+        "name": name,
+        "email": email,
+        "password": fake.password()
     }
     return user
 
