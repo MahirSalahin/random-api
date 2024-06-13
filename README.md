@@ -114,9 +114,11 @@ Endpoints
 Live API
 --------
 
-The API is live at: **https://random-api-dnl4.onrender.com/**
+The API is live at: 
+* *https://salahin-random-api.hf.space/*
+* *https://random-api-dnl4.onrender.com/*
 
-You can test the endpoints using your favorite HTTP client or tool, such as `curl` or Postman.
+You can test the endpoints using your favorite HTTP client or tool, such as `curl` or `Postman`.
 
 Installation (for Development)
 ------------
