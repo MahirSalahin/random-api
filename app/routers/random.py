@@ -19,7 +19,7 @@ def get_random_int() -> dict:
     return {"int": random_int()}
 
 
-@router.get("/{left}/{right}")
+@router.get("/int/{left}/{right}")
 def get_random_in_range(left: int, right: int) -> dict:
     """Return a random integer within the given range."""
     if left > right:
@@ -39,7 +39,7 @@ def toss_coin() -> dict:
     return {"result": random_choice(["Heads", "Tails"])}
 
 
-@router.get("/{options}")
+@router.get("/select/{options}")
 def get_random_option(options: str) -> dict:
     """Select a random option from the given list."""
     options_list = json.loads(options)

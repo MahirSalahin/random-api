@@ -7,9 +7,12 @@ def random_int(l: int = 0, r: int = 10**3) -> int:
     """Generate a random integer within the given range."""
     return randint(l, r)
 
-def random_float()->float:
+
+def random_float() -> float:
     """Generate a random float number."""
     return random()
+
+
 def random_choice(options: list):
     """Generate a random choice from a list of options."""
     return choice(options)

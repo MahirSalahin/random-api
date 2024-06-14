@@ -38,7 +38,7 @@ Endpoints
 
 
 
-### `/random/{left}/{right}`
+### `/random/int/{left}/{right}`
 
 * **Method:** GET
 * **Description:** Returns a random integer within the specified range.
@@ -69,7 +69,7 @@ Endpoints
 	+ `500 Internal Server Error`: If an error occurs while simulating the coin toss.
 
 
-### `/random/{options}`
+### `/random/select/{options}`
 
 * **Method:** GET
 * **Description:** Selects a random option from the given list.
