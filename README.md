@@ -15,14 +15,15 @@ Endpoints
 ### `/`
 
 * **Method:** GET
-* **Description:** Returns the API home page with available routes.
-* **Response:** A JSON object with a list of available routes and their descriptions.
+* **Description:** Server status
+* **Response:** {"message": "Server is running"}
+
 
 ### `/random`
 
 * **Method:** GET
 * **Description:** Returns a random float between 0 and 1.
-* **Response:** A JSON object with a single key-value pair, where the key is "float" and the value is a random float between 0 and 1.
+* **Response:** `{"float": <random_float>}`
 * **Errors:**
 	+ `500 Internal Server Error`: If an error occurs while generating the random float.
 
@@ -30,21 +31,21 @@ Endpoints
 
 * **Method:** GET
 * **Description:** Returns a random integer.
-* **Response:** A JSON object with a single key-value pair, where the key is "int" and the value is a random int.
+* **Response:** `{"int": <random_int>}`
 * **Errors:**
 	+ `500 Internal Server Error`: If an error occurs while generating the random integers.
 
 
 
 
-### `/random/range/{left}/{right}`
+### `/random/{left}/{right}`
 
 * **Method:** GET
 * **Description:** Returns a random integer within the specified range.
 * **Parameters:**
 	+ `left`: The minimum value of the range (inclusive).
 	+ `right`: The maximum value of the range (inclusive).
-* **Response:** A JSON object with a single key-value pair, where the key is "random" and the value is a random integer within the specified range.
+* **Response:** `{"int": <random_int>}`
 * **Errors:**
 	+ `400 Bad Request`: If `left` is greater than `right`.
 	+ `500 Internal Server Error`: If an error occurs while generating the random integer.
@@ -54,7 +55,7 @@ Endpoints
 
 * **Method:** GET
 * **Description:** Returns a random ASCII character.
-* **Response:** A JSON object with a single key-value pair, where the key is "char" and the value is a random ASCII character.
+* **Response:** `{"char": <random_char>}`
 * **Errors:**
 	+ `500 Internal Server Error`: If an error occurs while generating the random character.
 
@@ -63,18 +64,18 @@ Endpoints
 
 * **Method:** GET
 * **Description:** Simulates a coin toss and returns the result.
-* **Response:** A JSON object with a single key-value pair, where the key is "result" and the value is either "Heads" or "Tails".
+* **Response:** `{"result": "Heads" or "Tails"}`
 * **Errors:**
 	+ `500 Internal Server Error`: If an error occurs while simulating the coin toss.
 
 
-### `/random/choice/{options}`
+### `/random/{options}`
 
 * **Method:** GET
 * **Description:** Selects a random option from the given list.
 * **Parameters:**
 	+ `options`: A JSON-encoded list of options.
-* **Response:** A JSON object with a single key-value pair, where the key is "selected" and the value is a random option from the list.
+* **Response:** `{"selected": <random_option>}`
 * **Errors:**
 	+ `400 Bad Request`: If `options` is an empty list or not a valid JSON-encoded list.
 	+ `500 Internal Server Error`: If an error occurs while selecting the random option.
@@ -84,7 +85,7 @@ Endpoints
 
 * **Method:** GET
 * **Description:** Returns a random hex color.
-* **Response:** A JSON object with a single key-value pair, where the key is "color" and the value is a random hex color.
+* **Response:** `{"color": <random_color>}`
 * **Errors:**
 	+ `500 Internal Server Error`: If an error occurs while generating the random color.
 
@@ -93,7 +94,7 @@ Endpoints
 
 * **Method:** GET
 * **Description:** Generates a random user with name, email, and password.
-* **Response:** A JSON object with three key-value pairs, where the keys are "name", "email", and "password", and the values are random user data.
+* **Response:** `{"name": <random_name>, "email": <random_email>, "password": <random_password>}`
 * **Errors:**
 	+ `500 Internal Server Error`: If an error occurs while generating the random user data.
 
@@ -104,7 +105,7 @@ Endpoints
 * **Description:** Generates a random password of the specified length.
 * **Parameters:**
 	+ `length`: The length of the password.
-* **Response:** A JSON object with a single key-value pair, where the key is "password" and the value is a random password of the specified length.
+* **Response:** `{"password": <random_password>}`
 * **Errors:**
 	+ `400 Bad Request`: If `length` is less than 1.
 	+ `500 Internal Server Error`: If an error occurs while generating the random password.

@@ -6,4 +6,7 @@ app.include_router(randoom_router)
 
 @app.get("/")
 def get_home() -> dict:
+    """
+    Return server status
+    """
     return Response("Server is running")
