@@ -5,7 +5,7 @@ app = FastAPI()
 app.include_router(randoom_router)
 
 @app.get("/")
-def get_home() -> dict:
+def get_home() -> Response:
     """
     Return server status
     """
