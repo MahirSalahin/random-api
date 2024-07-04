@@ -65,4 +65,6 @@ def get_user() -> User:
 @router.get("/password/{length}")
 def get_password(length: int) -> dict:
     """Generate a random password of a specified length."""
+    if length < 4:
+        raise HTTPException(status_code=400, detail="Too short password")
     return {"password": random_password(length=length)}
